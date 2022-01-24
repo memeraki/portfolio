@@ -497,4 +497,71 @@ section {
 .main .headers:hover {
   background: #222;
 }
+
+.projects .grid-wrapper {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+}
+
+.projects .grid-wrapper > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: pink;
+}
+
+.projects .grid-wrapper > div h3 {
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+.projects .grid-wrapper > div div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.projects .grid-wrapper > div div a {
+  text-align: center;
+  width: 30%;
+  border: 1px dotted plum;
+  padding: 5px;
+}
+
+.projects .grid-wrapper > div div a:hover {
+  text-decoration: underline;
+}
+
+.projects .grid-wrapper .wide {
+  grid-column: span 2;
+}
+
+.projects .grid-wrapper .tall {
+  grid-row: span 2;
+}
+
+.projects .grid-wrapper .big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
 /*# sourceMappingURL=main.css.map */
