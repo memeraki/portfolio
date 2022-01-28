@@ -6,36 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/main.css">
   <title>Małgorzata Dziewit - Portfolio</title>
+  <script defer src="./js/script.js"></script>
 </head>
 <body>
   <nav>
-    <div>nav</div>
-    |
-    <div>some sample text</div>
+    <a href="#projects"><img src="./images/github.svg" alt="github"></a>
+    <a href="#contact"><img src="./images/in.svg" alt="github"></a>
   </nav>
   <div class="arrowUp"></div>
   <section class="main">
-    <div class="headers">
-      <h2><span>Hello.. I'm</span>Lorem Ipsum</h2>
+    <div class="headers" id="one">
+      <h2><span>Hello.. I'm</span>Małgorzata Dziewit</h2>
     </div>
-    <div class="headers">
+    <div class="headers" id="two">
       <h2><span>I'll be..</span>front-end</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod urna vel scelerisque dictum. Quisque in ipsum elit. Duis varius, nisi nec vehicula placerat, lectus nulla luctus est, et vulputate sem augue ut arcu. Nunc et bibendum ante, a tristique odio. Donec accumsan eget lorem sed mattis. Vestibulum et ex massa. Cras sed ante consequat, sagittis diam id, porttitor turpis. Duis pharetra augue purus, quis ultrices ante mollis quis. Nulla dignissim tortor lobortis arcu commodo imperdiet.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod urna vel scelerisque dictum. Quisque in ipsum elit. Duis varius, nisi nec vehicula placerat, lectus nulla luctus est, et vulputate sem augue ut arcu. Nunc et bibendum ante, a tristique odio. Donec accumsan eget lorem sed mattis. Vestibulum et ex massa.</p>
     </div>
-    <div class="headers">
+    <div class="headers" id="three">
       <h2>developer</h2>
       <div class="icons">
-        <img src="./images/sass.svg" alt="sass">
-        <img src="./images/sass.svg" alt="sass">
-        <img src="./images/sass.svg" alt="sass">
-        <img src="./images/sass.svg" alt="sass">
-        <img src="./images/sass.svg" alt="sass">
-        <img src="./images/sass.svg" alt="sass">
-        <img src="./images/sass.svg" alt="sass">
+        <img src="./images/html5.svg" alt="html" id="html">
+        <img src="./images/css3.svg" alt="css" id="css">
+        <img src="./images/js.svg" alt="js" id="js">
+        <img src="./images/ts.svg" alt="ts" id="ts">
+        <img src="./images/react.svg" alt="react" id="react">
+        <img src="./images/sass.svg" alt="sass" id="sass">
+        <!-- <img src="./images/sass.svg" alt="sass" id="npm"> -->
       </div>
     </div>
   </section>
-  <section class="projects">
+  <section class="projects" id="projects">
     <div class="grid-wrapper">
       <div class="wide">
         <h3>Project name</h3>
@@ -111,8 +111,10 @@
       </div>
     </div>
   </section>
-  <section class="contact">
-
+  <section class="contact" id="contact">
+      <p><span>e-mail</span> gosia.dziewit@gmail.com</p>
+      <p><span>linkedin</span> linkedin.com/in/memeraki</p>
+      <p><span>github</span> github.com/memeraki</p>
   </section>
 </body>
 </html>

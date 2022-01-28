@@ -3,11 +3,15 @@
 @import "settings";
 @import "animations";
 
+html {
+  scroll-behavior: smooth;
+}
+
 nav {
   position: absolute;
-  color: #ddd;
-  background-color: #222;
-  width: 200px;
+  color: $white;
+  background-color: $black;
+  width: 100px;
   height: 50px;
   border-radius: 25px;
   top: 10px;
@@ -16,6 +20,12 @@ nav {
   flex-flow: row nowrap;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 10;
+  line-height: 0;
+
+  img {
+    height: 30px;
+  }
 }
 
 section {
@@ -27,12 +37,12 @@ section {
   .headers {
     height: 33.3%;
     width: 100%;
-    background: $black;
+    background: $white;
     display: flex;
     flex-flow: row-reverse nowrap;
     justify-content: space-between;
     align-items: flex-end;
-    color: #ddd;
+    color: $black; 
     padding: 25px;
 
     &:last-child {
@@ -41,12 +51,9 @@ section {
 
     h2 {
       float: right;
-      // font-variant: small-caps;
       text-transform: uppercase;
-      // min-width: 50%;
       text-align: right;
       font-size: 50px;
-      min-width: max-content;
 
       span {
         font-style: italic;
@@ -63,34 +70,95 @@ section {
       align-self: center;
     }
 
-    .icons { 
-      // align-self: center;
+    .icons {
+      margin-right: 25px;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      width: 100%;
+      height: 100%;
 
       img {
-        height: 30px;
-        
-        &:hover {
-          filter: invert(15%) sepia(98%) saturate(3838%) hue-rotate(298deg) brightness(129%) contrast(122%);
+        height: 50px;
+        margin: 0 20px 20px 0;
+      }
+
+      #html {
+        &:hover { 
+          filter: invert(29%) sepia(91%) saturate(5301%) hue-rotate(182deg) brightness(96%) contrast(101%);
         }
       }
-    }
-    
-    &:hover {
-      background: #222;
+
+      #css {
+        &:hover{
+          filter: invert(37%) sepia(15%) saturate(6367%) hue-rotate(349deg) brightness(83%) contrast(106%);
+        }
+      }
+
+      #js {
+        &:hover {
+          filter: invert(64%) sepia(93%) saturate(408%) hue-rotate(351deg) brightness(112%) contrast(94%);
+        }
+      }
+
+      #ts {
+        height: 45px;
+        width: auto;
+        &:hover { 
+          filter: invert(50%) sepia(32%) saturate(5526%) hue-rotate(164deg) brightness(87%) contrast(101%);
+        }
+      }
+
+      #react {
+        &:hover{
+          filter: invert(73%) sepia(68%) saturate(570%) hue-rotate(162deg) brightness(102%) contrast(97%);
+        }
+      }
+
+      #sass {
+        &:hover {
+          filter: invert(55%) sepia(76%) saturate(5391%) hue-rotate(320deg) brightness(88%) contrast(92%);
+        }
+      }
     }
   }
 }
 
 .projects {
+  height: min-content;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   .grid-wrapper {
-    
+    flex: 1;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+
+    .wide {
+      grid-column: span 2;
+    }
+    .tall {
+      grid-row: span 2;
+    }
+    .big {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
     & > div {
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
-      background-color: pink;
+      // background-color: pink;
 
       h3 {
         font-weight: bold;
@@ -106,7 +174,7 @@ section {
         a {
           text-align: center; 
           width: 30%;
-          border: 1px dotted plum;
+          // border: 1px dotted plum;
           padding: 5px;
 
           &:hover {
@@ -114,24 +182,22 @@ section {
           }
         }
       } 
-      
     } 
-
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-rows: 200px;
-    grid-auto-flow: dense;
-
-    .wide {
-      grid-column: span 2;
-    }
-    .tall {
-      grid-row: span 2;
-    }
-    .big {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
   }
+}
+
+.contact {
+  // background:
+  //    url("../images/bg.jpg")    /* image */
+  //    center center / 200px 200px /* position / size */
+  //    no-repeat                /* repeat */
+  //    fixed                    /* attachment */
+  //    padding-box              /* origin */
+  //    content-box              /* clip */
+  //    #ddd;                     /* color */
+  color: $black;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
