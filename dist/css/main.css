@@ -1,3 +1,67 @@
+/*** The new CSS Reset - version 1.4.5 (last updated 13.1.2022) ***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+@import url("https://fonts.googleapis.com/css2?family=Changa&family=Montserrat:wght@400;500&display=swap");
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -341,69 +405,6 @@ template {
   display: none;
 }
 
-/*** The new CSS Reset - version 1.4.5 (last updated 13.1.2022) ***/
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
- */
-*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-  all: unset;
-  display: revert;
-}
-
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-/* Reapply the pointer cursor for anchor tags */
-a {
-  cursor: revert;
-}
-
-/* Remove list styles (bullets/numbers) */
-ol, ul, menu {
-  list-style: none;
-}
-
-/* For images to not be able to exceed their container */
-img {
-  max-width: 100%;
-}
-
-/* removes spacing between cells in tables */
-table {
-  border-collapse: collapse;
-}
-
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
-}
-
-/* fix the feature of 'hidden' attribute.
- display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
-}
-
-/* revert for bug in Chromium browsers
- - fix for the content editable attribute will work properly. */
-:where([contenteditable]) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable="true"]) {
-  -webkit-user-drag: element;
-}
-
 #one,
 #two {
   background: var(--bg-color, #fafaffff);
@@ -429,8 +430,24 @@ textarea {
   z-index: -1;
 }
 
+@-webkit-keyframes arrow-movement {
+  50% {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+}
+
+@keyframes arrow-movement {
+  50% {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+}
+
 html {
   scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 nav {
@@ -461,6 +478,50 @@ nav {
 
 nav img {
   height: 30px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+nav #github:hover {
+  -webkit-filter: invert(41%) sepia(14%) saturate(5084%) hue-rotate(309deg) brightness(87%) contrast(95%);
+          filter: invert(41%) sepia(14%) saturate(5084%) hue-rotate(309deg) brightness(87%) contrast(95%);
+}
+
+nav #linkedin:hover {
+  -webkit-filter: invert(34%) sepia(14%) saturate(7370%) hue-rotate(170deg) brightness(92%) contrast(105%);
+          filter: invert(34%) sepia(14%) saturate(7370%) hue-rotate(170deg) brightness(92%) contrast(105%);
+}
+
+.arrow {
+  position: fixed;
+  color: #fafaffff;
+  background-color: #222222ff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  bottom: 10px;
+  right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+.arrow:hover {
+  -webkit-animation: arrow-movement 1s ease-in-out infinite;
+          animation: arrow-movement 1s ease-in-out infinite;
+  background: #f7b32bff;
+}
+
+.arrow img {
+  height: 55px;
 }
 
 section {
@@ -499,6 +560,7 @@ section {
   text-transform: uppercase;
   text-align: right;
   font-size: 50px;
+  font-family: 'Changa', sans-serif;
 }
 
 .main .headers h2 span {
@@ -506,15 +568,17 @@ section {
   font-size: 20px;
   text-transform: initial;
   display: block;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .main .headers p {
-  font-size: 12px;
+  font-size: 14px;
   max-width: 40%;
   margin-right: 25px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  font-weight: 500;
 }
 
 .main .headers .icons {
@@ -538,6 +602,8 @@ section {
 .main .headers .icons img {
   height: 50px;
   margin: 0 20px 20px 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .main .headers .icons #html:hover {
@@ -636,9 +702,9 @@ section {
 }
 
 .projects .grid-wrapper > div h3 {
-  font-weight: bold;
-  font-variant: small-caps;
   text-align: center;
+  font-family: 'Changa', sans-serif;
+  font-size: 20px;
 }
 
 .projects .grid-wrapper > div div {
@@ -676,5 +742,10 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: 500;
+}
+
+.contact span {
+  font-weight: 400;
 }
 /*# sourceMappingURL=main.css.map */
