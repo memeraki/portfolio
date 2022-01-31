@@ -44,7 +44,7 @@ nav {
 }
 
 .arrow {
-  position: fixed;
+  position: absolute;
   color: $white;
   background-color: $black;
   width: 50px;
@@ -69,12 +69,13 @@ nav {
 
 section {
   height: 100vh;
+  position: relative;
 }
 
 .main {
 
   .headers {
-    height: 33.3%;
+    height: 25%;
     width: 100%;
     background: $white;
     display: flex;
@@ -92,7 +93,7 @@ section {
       float: right;
       text-transform: uppercase;
       text-align: right;
-      font-size: 50px;
+      font-size: 42px;
       font-family: 'Changa', sans-serif;
 
       span {
@@ -104,12 +105,20 @@ section {
       }
     }
 
-    p {
+    .about {
       font-size: 14px;
-      max-width: 40%;
+      max-width: 60%;
       margin-right: 25px;
       align-self: center;
       font-weight: 500;
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      p:last-child {
+        margin-bottom: 0px;
+      }
     }
 
     .icons {
@@ -122,7 +131,7 @@ section {
       height: 100%;
 
       img {
-        height: 50px;
+        height: 30px;
         margin: 0 20px 20px 0;
         transition: all .2s;
       }
@@ -146,8 +155,8 @@ section {
       }
 
       #ts {
-        height: 45px;
-        width: auto;
+        width: 25px;
+        height: auto;
         &:hover { 
           filter: invert(50%) sepia(32%) saturate(5526%) hue-rotate(164deg) brightness(87%) contrast(101%);
         }
@@ -166,6 +175,10 @@ section {
       }
     }
   }
+
+  #two {
+    height: 50%;
+  }
 }
 
 .projects {
@@ -183,15 +196,22 @@ section {
     grid-auto-rows: 150px;
     grid-auto-flow: dense;
 
+    .project {
+      background: $yellow
+    } 
+
     .wide {
       grid-column: span 2;
+      background: $pink;
     }
     .tall {
       grid-row: span 2;
+      background: $orange;
     }
     .big {
       grid-column: span 2;
       grid-row: span 2;
+      background: $blue; 
     }
 
     & > div {
@@ -225,7 +245,7 @@ section {
           }
         }
       } 
-    } 
+    }
   }
 }
 

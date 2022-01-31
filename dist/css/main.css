@@ -493,7 +493,7 @@ nav #linkedin:hover {
 }
 
 .arrow {
-  position: fixed;
+  position: absolute;
   color: #fafaffff;
   background-color: #222222ff;
   width: 50px;
@@ -526,10 +526,11 @@ nav #linkedin:hover {
 
 section {
   height: 100vh;
+  position: relative;
 }
 
 .main .headers {
-  height: 33.3%;
+  height: 25%;
   width: 100%;
   background: #fafaffff;
   display: -webkit-box;
@@ -559,7 +560,7 @@ section {
   float: right;
   text-transform: uppercase;
   text-align: right;
-  font-size: 50px;
+  font-size: 42px;
   font-family: 'Changa', sans-serif;
 }
 
@@ -571,14 +572,22 @@ section {
   font-family: 'Montserrat', sans-serif;
 }
 
-.main .headers p {
+.main .headers .about {
   font-size: 14px;
-  max-width: 40%;
+  max-width: 60%;
   margin-right: 25px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   font-weight: 500;
+}
+
+.main .headers .about p {
+  margin-bottom: 10px;
+}
+
+.main .headers .about p:last-child {
+  margin-bottom: 0px;
 }
 
 .main .headers .icons {
@@ -600,7 +609,7 @@ section {
 }
 
 .main .headers .icons img {
-  height: 50px;
+  height: 30px;
   margin: 0 20px 20px 0;
   -webkit-transition: all .2s;
   transition: all .2s;
@@ -622,8 +631,8 @@ section {
 }
 
 .main .headers .icons #ts {
-  height: 45px;
-  width: auto;
+  width: 25px;
+  height: auto;
 }
 
 .main .headers .icons #ts:hover {
@@ -639,6 +648,10 @@ section {
 .main .headers .icons #sass:hover {
   -webkit-filter: invert(55%) sepia(76%) saturate(5391%) hue-rotate(320deg) brightness(88%) contrast(92%);
           filter: invert(55%) sepia(76%) saturate(5391%) hue-rotate(320deg) brightness(88%) contrast(92%);
+}
+
+.main #two {
+  height: 50%;
 }
 
 .projects {
@@ -670,17 +683,24 @@ section {
   grid-auto-flow: dense;
 }
 
+.projects .grid-wrapper .project {
+  background: #f7b32bff;
+}
+
 .projects .grid-wrapper .wide {
   grid-column: span 2;
+  background: #da4167ff;
 }
 
 .projects .grid-wrapper .tall {
   grid-row: span 2;
+  background: #d45c24ff;
 }
 
 .projects .grid-wrapper .big {
   grid-column: span 2;
   grid-row: span 2;
+  background: #0094c6ff;
 }
 
 .projects .grid-wrapper > div {
